@@ -1,10 +1,12 @@
+import Header from "./components/Header";
 
 function App() {
   return (
-      <div>
-        <h1>Climate Impact Dashboard</h1>
-      </div>
+    <div>
+      <Header />
+    </div>
   );
 }
 
 export default App;
+
