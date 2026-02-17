@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import { fetchWeather } from "./services/weatherService";
+import WeatherCard from "./components/WeatherCard";
 
 function App() {
   const [selectedCity, setSelectedCity] = useState("");
@@ -36,18 +37,7 @@ function App() {
 
       {error && <p>{error}</p>}
 
-      {weatherData && (
-        <div>
-          <h2>{weatherData.name}</h2>
-          <p>Temperature: {weatherData.main.temp} °C</p>
-          <p>Humidity: {weatherData.main.humidity}%</p>
-          <p>Wind Speed: {weatherData.wind.speed} m/s</p>
-          <img
-            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-            alt="weather icon"
-          />
-        </div>
-      )}
+      {weatherData && <WeatherCard data={weatherData} />}
     </div>
   );
 }
