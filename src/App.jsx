@@ -4,6 +4,7 @@ import SearchBar from "./components/SearchBar";
 import { fetchWeather } from "./services/weatherService";
 import WeatherCard from "./components/WeatherCard";
 import ErrorMessage from "./components/ErrorMessage";
+import Loading from "./components/Loading";
 
 function App() {
   const [selectedCity, setSelectedCity] = useState("");
@@ -42,7 +43,7 @@ function App() {
       <Header />
       <SearchBar onSearch={handleSearch} />
 
-      {loading && <p>Loading weather data...</p>}
+      {loading && <Loading />}
 
 {error && !loading && <ErrorMessage message={error} />}
 
