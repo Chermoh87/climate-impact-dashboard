@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import { fetchWeather } from "./services/weatherService";
 import WeatherCard from "./components/WeatherCard";
+import ErrorMessage from "./components/ErrorMessage";
 
 function App() {
   const [selectedCity, setSelectedCity] = useState("");
@@ -43,7 +44,7 @@ function App() {
 
       {loading && <p>Loading weather data...</p>}
 
-{error && !loading && <p>{error}</p>}
+{error && !loading && <ErrorMessage message={error} />}
 
 {weatherData && !loading && !error && (
   <WeatherCard data={weatherData} />
