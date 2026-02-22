@@ -8,6 +8,7 @@ function App() {
   const [selectedCity, setSelectedCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = (city) => {
     setSelectedCity(city);
@@ -18,15 +19,20 @@ function App() {
 
     const getWeather = async () => {
       try {
+        setLoading(true);
         setError("");
+        setWeatherData(null);
+
         const data = await fetchWeather(selectedCity);
         setWeatherData(data);
       } catch (err) {
         setWeatherData(null);
         setError(err.message);
+      } finally {
+        setLoading(false);
       }
     };
-
+    
     getWeather();
   }, [selectedCity]);
 
@@ -35,9 +41,13 @@ function App() {
       <Header />
       <SearchBar onSearch={handleSearch} />
 
-      {error && <p>{error}</p>}
+      {loading && <p>Loading weather data...</p>}
 
-      {weatherData && <WeatherCard data={weatherData} />}
+{error && !loading && <p>{error}</p>}
+
+{weatherData && !loading && !error && (
+  <WeatherCard data={weatherData} />
+)}
     </div>
   );
 }
