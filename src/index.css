@@ -62,3 +62,25 @@ body {
 .search-button:hover {
   background-color: #00c6ff;
 }
+
+.weather-card {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.weather-city {
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+}
+
+.weather-details p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.weather-icon {
+  margin-top: 1rem;
+  width: 80px;
+  height: 80px;
+}
