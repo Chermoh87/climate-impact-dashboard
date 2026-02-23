@@ -101,6 +101,11 @@ body {
   margin-bottom: 1.2rem;
 }
 
+.logo-section {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 480px) {
   .search-form {
     flex-direction: column;
