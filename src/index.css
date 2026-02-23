@@ -28,3 +28,37 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.search-input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  width: 65%;
+  font-size: 0.9rem;
+}
+
+.search-input:focus {
+  border-color: #4facfe;
+}
+
+.search-button {
+  padding: 0.6rem 1rem;
+  border: none;
+  background-color: #4facfe;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #00c6ff;
+}
