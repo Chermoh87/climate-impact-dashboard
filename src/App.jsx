@@ -5,6 +5,8 @@ import { fetchWeather } from "./services/weatherService";
 import WeatherCard from "./components/WeatherCard";
 import ErrorMessage from "./components/ErrorMessage";
 import Loading from "./components/Loading";
+import Footer from "./components/Footer";
+
 
 function App() {
   const [selectedCity, setSelectedCity] = useState("");
@@ -38,20 +40,22 @@ function App() {
     getWeather();
   }, [selectedCity]);
 
-  return (
+ return (
+  <div className="page-wrapper">
     <div className="app-container">
       <Header />
       <SearchBar onSearch={handleSearch} />
 
       {loading && <Loading />}
-
-{error && !loading && <ErrorMessage message={error} />}
-
-{weatherData && !loading && !error && (
-  <WeatherCard data={weatherData} />
-)}
+      {error && !loading && <ErrorMessage message={error} />}
+      {weatherData && !loading && !error && (
+        <WeatherCard data={weatherData} />
+      )}
     </div>
-  );
+
+    <Footer />
+  </div>
+);
 }
 
 export default App;
