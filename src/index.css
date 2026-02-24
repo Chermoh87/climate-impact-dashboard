@@ -91,6 +91,15 @@ body {
   height: 80px;
 }
 
+.aqi-section {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: #f3f6fa;
+  text-align: center;
+  font-weight: 500;
+}
+
 .header h1 {
   margin-bottom: 0.5rem;
   font-size: 1.9rem;
