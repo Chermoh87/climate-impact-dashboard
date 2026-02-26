@@ -26,7 +26,7 @@ A sleek, responsive weather and air quality dashboard built with React and the O
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/climate-impact-dashboard.git](https://github.com/yourusername/climate-impact-dashboard.git)
+   git clone [https://github.com/Chermoh87/climate-impact-dashboard.git](https://github.com/Chermoh87/climate-impact-dashboard.git)
    cd climate-impact-dashboard
 
 ## 🔑 Environment Setup
