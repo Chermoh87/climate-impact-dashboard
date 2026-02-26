@@ -132,6 +132,30 @@ body {
   margin: 0.2rem 0;
 }
 
+.unit-toggle {
+  margin: 1rem auto;
+  display: block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #2f80ed, #56ccf2);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.unit-toggle:hover {
+  transform: translate(-2px);
+  box-shadow: 0 6px 15px rgba(47, 128, 237, 0.4);
+}
+
+.unit-toggle:active {
+  transform: scale(0.97);
+}
+
 @media (max-width: 480px) {
   .search-form {
     flex-direction: column;

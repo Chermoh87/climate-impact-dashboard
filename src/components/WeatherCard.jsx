@@ -1,4 +1,4 @@
-function WeatherCard({ data }) {
+function WeatherCard({ data, unit }) {
 
   const getAQILabel = (aqi) => {
     switch (aqi) {
@@ -16,13 +16,13 @@ function WeatherCard({ data }) {
         return "Unknown";
     }
   };
-
+{unit === "metric" ? "°C" : "°F"}
   return (
     <div className="weather-card">
       <h2 className="weather-city">{data.name}</h2>
 
       <div className="weather-details">
-        <p><strong>Temperature:</strong> {data.main.temp} °C</p>
+        <p><strong>Temperature:</strong> {data.main.temp} {unit === "metric" ? "°C" : "°F"}</p>
         <p><strong>Humidity:</strong> {data.main.humidity}%</p>
         <p><strong>Wind Speed:</strong> {data.wind.speed} m/s</p>
       </div>

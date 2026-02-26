@@ -13,6 +13,7 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [unit, setUnit] = useState("metric");
 
   const handleSearch = (city) => {
     setSelectedCity(city);
@@ -27,7 +28,7 @@ function App() {
         setError("");
         setWeatherData(null);
 
-        const data = await fetchWeather(selectedCity);
+        const data = await fetchWeather(selectedCity, unit);
         setWeatherData(data);
       } catch (err) {
         setWeatherData(null);
@@ -38,7 +39,7 @@ function App() {
     };
     
     getWeather();
-  }, [selectedCity]);
+  }, [selectedCity, unit]);
 
  return (
   <div className="page-wrapper">
@@ -46,10 +47,19 @@ function App() {
       <Header />
       <SearchBar onSearch={handleSearch} />
 
+      <button
+        className="unit-toggle"
+        onClick={() =>
+          setUnit(unit === "metric" ? "imperial" : "metric")
+        }
+      >
+        {unit === "metric" ? "Switch to °F" : "Switch to °C"}
+      </button>
+
       {loading && <Loading />}
       {error && !loading && <ErrorMessage message={error} />}
       {weatherData && !loading && !error && (
-        <WeatherCard data={weatherData} />
+        <WeatherCard data={weatherData} unit={unit} />
       )}
     </div>
 
